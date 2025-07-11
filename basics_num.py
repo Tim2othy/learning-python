@@ -89,7 +89,8 @@ long.reshape(2, 4)
 
 y.reshape(2, 4)
 
-new = np.arange(24)
+standard = np.arange(24)
+new = standard
 print(new)
 new = new.reshape(2, 4, 3)
 print(new)
@@ -129,3 +130,17 @@ ob[np.newaxis, :]
 ob[:, np.newaxis]
 ob[:, np.newaxis].shape
 # ok, I think i kind of get it.
+
+
+# Indexing and slicing
+
+data = standard
+data[1]
+data[0:2]
+data[1:]
+data[-2:]
+
+data[1:12]
+
+data = data.reshape(6, 4)
+data[1:6, 0:2]
