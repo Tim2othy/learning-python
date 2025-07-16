@@ -144,3 +144,68 @@ data[1:12]
 
 data = data.reshape(6, 4)
 data[1:6, 0:2]
+
+print(data[data < 12])
+data.shape
+con = data > 8
+print(data[con | (data == 3)])
+print(data[con & (data == 12)])
+print(data)
+print(np.nonzero(data > 20))
+
+# ok this is actually pretty cool. I like numpy now
+
+
+# zipping
+
+a = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+b = np.nonzero(a < 5)
+print(b)
+
+list_of_coordinates = list(zip(b[0], b[1]))
+print(list_of_coordinates)
+
+for coord in list_of_coordinates:
+    print(coord)
+
+print(a[b])
+
+
+# How to create an array from existing data
+a = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+arr1 = a[3:8]
+print(arr1)
+
+a1 = np.array([[1, 1], [2, 2]])
+
+a2 = np.array([[3, 3], [4, 4]])
+
+
+arr2 = np.hstack((a1, a2))
+arr3 = np.vstack((a1, a2))
+print(arr2)
+
+print(arr3)
+
+x = standard.reshape(2, 12)
+print(x)
+
+y = np.hsplit(x, (3, 4))
+print(y)
+
+# on views
+
+a = standard.reshape(4, 6)
+print(a)
+
+b1 = a[0, :]
+print(b1)
+
+b1[0] = 99
+b1 = 44  # This doesn't modify a. Makes sense
+
+b2 = a.copy()
+b2[2] = 22
+b2
+
+a
