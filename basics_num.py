@@ -209,3 +209,83 @@ b2[2] = 22
 b2
 
 a
+# Basic array operations
+
+data = np.array([1, 2])
+ones = np.ones(2, dtype=int)
+data + ones
+
+sum(standard)
+
+23 * 24 / 2 + 99
+
+standard
+
+data = standard.reshape(6, 4)
+data
+
+data.sum()
+
+data.sum(axis=0)
+data.sum(axis=1)
+
+# Broadcasting
+
+data * 1.5
+
+data
+
+# more operations
+
+data.min()
+data.max()
+data.mean()
+data
+data.mean(axis=1)
+
+# Matricies
+
+data = np.array([[4, 2], [6, 9]])
+
+data = np.array([[1, 2], [3, 4], [5, 6]])
+data
+
+
+data[0, 0]
+data[2, 1]
+data[1:9]
+data[0:2, 0]
+
+standard[0:5]
+
+
+data = np.array([[1, 2], [3, 4], [5, 6]])
+ones_row = np.array([[1, 1]])
+data + ones_row
+data.shape
+ones_row.shape
+
+
+new = np.array(standard.reshape(12, 2))
+new.shape
+new
+
+shaped = new.reshape(4, 6)
+shaped
+
+
+ready = np.array([shaped[1, 0:2]])
+ready.shape
+cast = ready + new
+
+ready.shape
+new.shape
+ready
+new
+
+ready + ones_row
+
+
+np.random.random((3, 3, 3))
+
+# How to get unique items and counts
