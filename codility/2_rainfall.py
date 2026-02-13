@@ -6,13 +6,13 @@ A = [1, 7, 5, 6, 1, 3]
 
 def solution(A):
 
-    highest = 0
-    largest_diff = 0
+    highest = 0  # hight of highest ever peak
+    largest_diff = 0  # max difference to highest peak
     current_hight = 0
-    safe = 0
+    safe = 0  # max place we know to be filled with water
 
-    h_of_max_diff = 0
-    max_diff_after_peak = False
+    h_of_max_diff = 0  # hight of currently deepest place
+    max_diff_after_peak = False  # We need this bool because we remember depth relativly to the highest peak, so if we get a new highst peak we can't use the old depth
 
     for i in range(len(A)):
         previous_hight = current_hight
@@ -37,18 +37,21 @@ def solution(A):
                 continue
             else:
                 if max_diff_after_peak:
-
                     could_be_safe = current_hight - h_of_max_diff
-
                     safe = max(could_be_safe, safe)
-
-        else:
-            continue
-
     return safe
 
 
 print(solution(A))
+
+# Algorithm:
+# Focus on time before highest peak and afterwards:
+# before we can just remember the largest difference to the previous highest peak.
+# Then when we get a higher peak this diff becomes safe and is our new max amount of depth
+# Now for the time after the highest peak:
+# Always remember the max depth you've reached relative to the highest peak (call this depth d), and remember the hight of this point (h) (so d + h = hight of highest peak)
+# now if you go up to e.g. y you know that y - h is filled with water, if this is larger than any previous depth it's your new best depth
+# this works even if you don't know if you are before or after the highest peak
 
 
 # Get tallest value
