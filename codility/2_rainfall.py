@@ -33,16 +33,14 @@ def solution(A):
             if current_hight > highest:
                 highest = current_hight
                 max_diff_after_peak = False
-                if largest_diff > safe:
-                    safe = largest_diff
+                safe = max(largest_diff, safe)
                 continue
             else:
                 if max_diff_after_peak:
 
                     could_be_safe = current_hight - h_of_max_diff
 
-                    if could_be_safe > safe:
-                        safe = could_be_safe
+                    safe = max(could_be_safe, safe)
 
         else:
             continue
@@ -64,12 +62,4 @@ print(solution(A))
 # if the mountain ever goes this high it just becomes our new best
 # if it doesn't it can be replaced by a different memory if
 # a hole gets deeper, then anything that helps the
-#  previous hole also helps this one
-#
-#
-#
-#
-#
-#
-#
-#
+# previous hole also helps this one
